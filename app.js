@@ -8,7 +8,8 @@ const userRoute = require("./routes/user")
 const blogRoute = require("./routes/blog")
 
 const app = express();
-const PORT = 8000;
+// const PORT = 8000;
+const PORT = process.env.PORT;
 
 //-------------------------------------------------------------
 // 1. const PORT = process.env.PORT; //for deployment
@@ -24,10 +25,14 @@ const PORT = 8000;
 
 //connection
 const {connectMongoDb} = require("./connection")
-connectMongoDb("mongodb://127.0.0.1:27017/db_blog")
+// connectMongoDb("mongodb://127.0.0.1:27017/db_blog")
+//     .then(()=>console.log("MongoDB connected"))
+//     .catch(()=>console.log("DB Connection Failed"))
+
+connectMongoDb(process.env.MONGO_URL)
     .then(()=>console.log("MongoDB connected"))
     .catch(()=>console.log("DB Connection Failed"))
-
+    
 //middle-ware
 app.use(express.urlencoded({extended:true}));
 app.set("view engine","ejs");

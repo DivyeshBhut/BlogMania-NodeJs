@@ -1,0 +1,47 @@
+<script>
+    // Basic code to use drop-down and close dropdown when window clicked   
+
+    // const btnDropDown = document.getElementById("dropdownNavbarLink")
+    // const dropDownMenu = document.getElementById("dropdownNavbar")
+
+    // btnDropDown.addEventListener("click",(event)=>{
+    //     event.stopPropagation();
+    //     dropDownMenu.classList.toggle('hidden');
+    // })
+
+    //  // Close the dropdown if clicked outside
+    //  window.addEventListener('click', function (e) {
+    //     if (!btnDropDown.contains(e.target) && !dropDownMenu.contains(e.target)) {
+    //         dropDownMenu.classList.add('hidden');
+    //     }
+    // });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const btnDropDown = document.getElementById("dropdownNavbarLink");
+        const dropDownMenu = document.getElementById("dropdownNavbar");
+
+        // Show the dropdown menu on hover
+        btnDropDown.addEventListener("mouseenter", () => {
+            dropDownMenu.classList.remove('hidden');
+            htmlElement.classList.toggle('dark');
+        });
+
+        // Hide the dropdown menu when the mouse leaves the button or the menu
+        btnDropDown.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+                if (!dropDownMenu.matches(':hover')) {
+                    dropDownMenu.classList.add('hidden');
+                }
+            }, 200);
+        });
+
+        dropDownMenu.addEventListener("mouseleave", () => {
+            dropDownMenu.classList.add('hidden');
+        });
+
+        dropDownMenu.addEventListener("mouseenter", () => {
+            dropDownMenu.classList.remove('hidden');
+        });
+
+    });
+</script>

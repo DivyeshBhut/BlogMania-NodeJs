@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"No tests yet\"",
     "start": "node index",
-    "dev":"nodemon index"
+    "dev": "nodemon index"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",

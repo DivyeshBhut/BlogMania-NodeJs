@@ -2,11 +2,11 @@
   "name": "09_blog",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"No tests yet\"",
-    "start": "node app",
-    "dev":"nodemon app"
+    "start": "node index",
+    "dev":"nodemon index"
   },
   "author": "",
   "license": "ISC",

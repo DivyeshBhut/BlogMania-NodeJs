@@ -44,4 +44,12 @@
         });
 
     });
+
+    //toogle button
+    const toggleButton = document.getElementById('navbar-toggle');
+    const navbarDropdown = document.getElementById('navbar-dropdown');
+
+    toggleButton.addEventListener('click', function () {
+      navbarDropdown.classList.toggle('hidden');
+    });
 </script>

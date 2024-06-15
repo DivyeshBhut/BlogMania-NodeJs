@@ -23,7 +23,7 @@ const userSchema = new Schema({
     },
     profileImgUrl:{
         type:String,
-        default:"https://flowbite.com/docs/images/logo.svg"
+        default:"https://cdn-icons-png.freepik.com/256/149/149071.png?semt=ais_hybrid"
     },
     role:{
         type:String,
@@ -31,6 +31,7 @@ const userSchema = new Schema({
         default:"USER"
     }
 },{timestamps:true});
+
 
 //In arrow() having the problem of the this Keyword that's why we use the normal()
 userSchema.pre("save",function (next){

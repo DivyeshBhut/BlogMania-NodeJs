@@ -13,12 +13,24 @@ router.get("/signup",(req,res)=>{
 
 router.post("/signup",async (req,res)=>{
     const {fullName,email,password} = req.body;
-    await User.create({
-        fullName,
-        email,
-        password
-    });
-    return res.redirect("/user/signin")
+    try {
+        await User.create({
+            fullName,
+            email,
+            password
+        });
+        return res.redirect("/user/signin")
+    } catch (error) {
+        if (error.code === 11000) {
+            return res.render("signup",{
+                error:"Email already exists. Please try with a different email."
+            });
+        } else {
+            return res.render("signup",{
+                error:"Internal Server Error. Please try again later."
+            });
+        }
+    }
 })
 
 router.post("/signin",async (req,res)=>{
